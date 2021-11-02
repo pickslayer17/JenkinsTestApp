@@ -9,13 +9,13 @@ public class JenkinsTestApp {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("src/main/java/text.txt");
 
+        path = path.toAbsolutePath();
+        System.out.println(path);
         System.out.println("Welcome to Jenkins!");
         System.out.println();
-        try (Scanner scanner = new Scanner(path)) {
+        Scanner scanner = new Scanner(path);
             System.out.println(scanner.nextLine());
-        }  catch (IOException exception) {
-            exception.printStackTrace();
-        }
+
 
     }
 }
